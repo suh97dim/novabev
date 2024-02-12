@@ -1,0 +1,26 @@
+extends /layout/page
+
+block title
+    title Главная страница
+
+block variables
+    - var page = 'index'
+block content
+    .container-fluid.main-block
+        .container 
+            .row 
+                .col-6
+                    +img('main-text-img.png','','main-text-img')
+                .col-6.d-flex.align-items-center.flex-column
+            .row 
+                .col-12
+                    +img('bg/form-bg.png','','form-img')
+                    form.row.needs-validation(novalidate).main-form
+                        .col-12.mb-24
+                            input( placeholder="Номер телефона" required ).form-control.mask-phone
+                        .col-12.mb-24
+                            input(type="password" placeholder="Пароль" required ).form-control
+                        .col-12.mb-24
+                            button.btn(type="submit")  Войти в кабинет
+                    .footer-p
+                        |Акция проводится на территории Российской Федерации. Период регистрации участников и кодов: с 01.12.2022 по 30.06.2023 включительно по московскому времени. Организатором Акции является ООО «Ай-Экшн». Информация об организаторе Акции, правилах её проведения, товарах-участниках Акции, количестве призов по результатам Акции, сроках, месте и порядке их получения размещена на сайте акции https://novabev.com/

@@ -1,0 +1,27 @@
+header.page-header
+	.container.header-container 
+		.row.ai-c.jc-sb
+			.col-auto.d-xll-n
+				button.hamburger.js-hamburger.collapsed(type="button" data-toggle="collapse" data-target=".page-header-menu")
+					span.hamburger-box
+						span.hamburger-inner
+			.col-auto
+				a(href='/')
+					+img('logo.png','Логотип','logo-img')
+			.col-auto.page-header-menu.collapse
+				ul.nav.nav-header
+					li.nav-item
+						a(href="upload/rules.pdf").nav-link-header Политика конфиденциальности
+					li.nav-item
+						a(href='#prizes' ).nav-link-header Правила акции
+					li.nav-item
+						a(href='#winner' ).nav-link-header Обработка персональных данных
+					li.nav-item
+						a(href='#faq' ).nav-link-header Личный кабинет
+
+
+
+
+
+
+
