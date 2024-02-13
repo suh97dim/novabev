@@ -9,17 +9,26 @@ header.page-header
 				a(href='/')
 					+img('logo.png','Логотип','logo-img')
 			.col-auto.page-header-menu.collapse
-				ul.nav.nav-header
-					li.nav-item
-						a(href="upload/rules.pdf").nav-link-header Политика конфиденциальности
-					li.nav-item
-						a(href='#prizes' ).nav-link-header Правила акции
-					li.nav-item
-						a(href='#winner' ).nav-link-header Обработка персональных данных
-					li.nav-item
-						a(href='#faq' ).nav-link-header Личный кабинет
-
-
+				if page == 'index'
+					ul.nav.nav-header
+						li.nav-item
+							a(href="upload/").nav-link-header Политика конфиденциальности
+						li.nav-item
+							a(href="upload/" ).nav-link-header Правила акции
+						li.nav-item
+							a(href="upload/" ).nav-link-header Обработка персональных данных
+						li.nav-item
+							a(href='/lk.html' ).nav-link-header Личный кабинет
+				else
+					ul.nav.nav-header
+						li.nav-item
+							a(href="upload/").nav-link-header Политика конфиденциальности
+						li.nav-item
+							a(href="upload/").nav-link-header Правила акции
+						li.nav-item
+							a(href="upload/").nav-link-header Обработка персональных данных
+						li.nav-item
+							a.nav-link-header(href="#" onclick="logout();") Выйти
 
 
 

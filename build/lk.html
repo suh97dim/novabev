@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="undefined">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="msapplication-TileImage" content="">
+    <meta name="theme-color" content="undefined">
+    <meta name="msapplication-navbutton-color" content="undefined">
+    <meta name="apple-mobile-web-app-status-bar-style" content="undefined">
+    <meta name="description" content="undefined">
+    <title>Личный кабинет</title>
+    <link type="image/x-icon" href="favicon.ico" rel="icon">
+    <link type="image/svg+xml" href="#" rel="icon">
+    <link href="#" rel="apple-touch-icon">
+    <link href="#" color="undefined" rel="mask-icon">
+    <link type="text/css" href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="libs/datepicker-bootstrap/datepicker.min.css" rel="stylesheet">
+    <link type="text/css" href="libs/croppie/croppie.css" rel="stylesheet">
+    <link type="text/css" href="libs/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link type="text/css" href="libs/fancybox/fancybox.css" rel="stylesheet">
+    <link type="text/css" href="css/main.min.css" rel="stylesheet">
+    <body class="lk-bg">
+      <header class="page-header">
+        <div class="container header-container"> 
+          <div class="row ai-c jc-sb">
+            <div class="col-auto d-xll-n">
+              <button class="hamburger js-hamburger collapsed" type="button" data-toggle="collapse" data-target=".page-header-menu"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+            </div>
+            <div class="col-auto"><a href="/"><img class="logo-img" src="img/logo.webp" alt="Логотип"/></a></div>
+            <div class="col-auto page-header-menu collapse">
+              <ul class="nav nav-header">
+                <li class="nav-item"><a class="nav-link-header" href="upload/">Политика конфиденциальности</a></li>
+                <li class="nav-item"><a class="nav-link-header" href="upload/">Правила акции</a></li>
+                <li class="nav-item"><a class="nav-link-header" href="upload/">Обработка персональных данных</a></li>
+                <li class="nav-item"><a class="nav-link-header" href="#" onclick="logout();">Выйти</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="container">
+        <div class="row"> 
+          <div class="col-12"> <img class="main-text-lk" src="img/main-text.webp" alt=""/>
+          </div>
+        </div>
+        <div class="row lk-content"> 
+          <div class="col-12">
+            <div class="lk-attention"><img src="img/icons/attention.svg"/>Для получения призов свыше 4000 рублей за календарный год Вам необходимо заполнить персональные данные. Эти данные, в соответствии с законом, требуются для уплаты налогов при получении призов, общая стоимость которых превышает 4000 рублей.
+            </div>
+          </div>
+          <div class="col mt-md-60">
+            <h3 class="c-white">Данные для уплаты налогов:</h3>
+            <form class="row needs-validation" novalidate>
+              <div class="col-sm-4 mb-24">
+                <input class="form-control" type="text" placeholder="Фамилия" required>
+              </div>
+              <div class="col-sm-4 mb-24">
+                <input class="form-control" type="text" placeholder="Имя" required>
+              </div>
+              <div class="col-sm-4 mb-24">
+                <input class="form-control" type="text" placeholder="Отчество" required>
+              </div>
+              <div class="col-sm-4 mb-24">
+                <input class="form-control" type="text" placeholder="Дата рождения" data-toggle="datepicker" required>
+              </div>
+              <div class="col-sm-6 mb-xl-25">
+                <div class="form-control-wrap mb-22 radio-wrap">
+                  <div class="text-label">Пол:</div>
+                  <label class="radio-label" for="male">
+                    <input class="radio-input" type="radio" value="Муж" checked name="gender" id="male">Муж.
+                  </label>
+                  <label class="radio-label" for="female">
+                    <input class="radio-input" type="radio" value="Жен" name="gender" id="female">Жен.
+                  </label>
+                </div>
+              </div>
+              <h3 class="c-white">Первая страница паспорта</h3>
+              <div class="col-sm-4 mb-24">
+                <input class="form-control" type="number" placeholder="Серия" required>
+              </div>
+              <div class="col-sm-4 mb-24">
+                <input class="form-control" type="number" placeholder="Номер" required>
+              </div>
+              <div class="col-sm-4 mb-24">
+                <input class="form-control" type="text" placeholder="Дата выдачи" data-toggle="datepicker" required>
+              </div>
+              <div class="col-sm-12 mb-32">
+                <input class="form-control" type="text" placeholder="Кем выдан" required>
+              </div>
+              <h3 class="c-white mt-30">Адрес прописки</h3>
+              <div class="col-sm-6 mb-24">
+                <input class="form-control" type="text" placeholder="Населенный пункт" required>
+              </div>
+              <div class="col-sm-6 mb-24">
+                <input class="form-control" type="text" placeholder="Улица" required>
+              </div>
+              <div class="col-sm-3 mb-24">
+                <input class="form-control" type="number" placeholder="Номер дома " required>
+              </div>
+              <div class="col-sm-3 mb-24">
+                <input class="form-control" type="number" placeholder="Номер строения" required>
+              </div>
+              <div class="col-sm-3 mb-24">
+                <input class="form-control" type="number" placeholder="Номер квартиры" required>
+              </div>
+              <div class="col-sm-3 mb-24">
+                <input class="form-control" type="number" placeholder="Почтовый индекс" required>
+              </div>
+              <h3 class="c-white mt-30">Дополнительные документы</h3>
+              <div class="col-sm-6 mb-24">
+                <input class="form-control" type="number" placeholder="ИНН" required>
+              </div>
+              <h3 class="c-white mt-30">Загрузить документы (скан или фото)</h3>
+              <div class="col-md-4 mb-24">
+                <div class="upload-one">
+                  <div class="file-subtitle">Паспорт, лицевая сторона</div><input invalid-custom="file-1" class="file" type="file" data-show-preview="false" required data-msg-placeholder="Загрузить файл">
+                </div>
+              </div>
+              <div class="col-md-4 mb-24">
+                <div class="upload-one">
+                  <div class="file-subtitle">Фото паспорта, прописка</div><input invalid-custom="file-2" class="file" type="file" data-show-preview="false" required data-msg-placeholder="Загрузить файл">
+                </div>
+              </div>
+              <div class="col-md-4 mb-24">
+                <div class="upload-one">
+                  <div class="file-subtitle"> ИНН</div><input invalid-custom="file-3"  class="file" type="file" data-show-preview="false" required data-msg-placeholder="Загрузить файл">
+                </div>
+              </div>
+              <div class="col-sm-12 mb-24">
+                <button class="btn mx-a" type="submit"> отправить данные</button>
+              </div>
+              <div class="col-12">
+                <div class="lk-footer">Акция проводится на территории Российской Федерации. Период регистрации участников и кодов: с 01.12.2022 по 30.06.2023 включительно по московскому времени. Организатором Акции является ООО «Ай-Экшн». Информация об организаторе Акции, правилах её проведения, товарах-участниках Акции, количестве призов по результатам Акции, сроках, месте и порядке их получения размещена на сайте акции https://novabev.com/ </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-12 pt-40">
+            <h3 class="c-white text-center fw-bold">Ваши данные отправлены на проверку. <br>Пожалуйста, ожидайте.</h3>
+          </div>
+          <div class="col-12 pt-40">
+            <h3 class="c-white text-center fw-bold">Все данные проверены и подтверждены. <br>Скачать сертификат Вы можете по ссылке ниже!</h3><a class="btn mx-a" href=""> скачать сертификат</a>
+          </div>
+        </div>
+      </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="libs/bootstrap-fileinput/js/fileinput.min.js"></script>
+    <script src="libs/datepicker-bootstrap/js/datepicker.js"></script>
+    <script src="libs/datepicker-bootstrap/js/datepicker.ru-RU.js"></script>
+    <script src="libs/bootstrap-fileinput/js/locales/ru.js"></script>
+    <script src="libs/DataTables/datatables.min.js"></script>
+    <script src="libs/jquery.maskedinput.min.js"></script>
+    <script src="libs/swiper/swiper-bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </head>
+</html>

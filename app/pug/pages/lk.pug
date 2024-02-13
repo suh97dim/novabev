@@ -7,35 +7,116 @@ block variables
     - var page = 'lk'
 
 block content
-    .container 
-        .row
-            .col 
-                h2.text-center
-                    div.brown-text-linear Личный кабинет
+    .container
+        .row 
+            .col-12 
+                +img('main-text.png','','main-text-lk')
+        .row.lk-content  
+            .col-12
+                .lk-attention
+                    +img("icons/attention.svg" )
+                    |Для получения призов свыше 4000 рублей за календарный год Вам необходимо заполнить персональные данные. Эти данные, в соответствии с законом, требуются для уплаты налогов при получении призов, общая стоимость которых превышает 4000 рублей.
+            .col.mt-md-60
+                h3.c-white Данные для уплаты налогов:
+                form.row.needs-validation(novalidate)
+                    .col-sm-4.mb-24
 
-        ul.nav.nav-lk.row 
-            li.nav-lk-item.col-4.col-sm.px-12
-                a(href='#tab-1' data-bs-toggle="tab").nav-lk-link.active Чеки
-            li.nav-lk-item.col-4.col-sm.px-0.px-sm-12
-                a(href='#tab-2' data-bs-toggle="tab").nav-lk-link Фотоконкурс
-            li.nav-lk-item.col-4.col-sm.px-12
-                a(href='#tab-3' data-bs-toggle="tab").nav-lk-link Заявки   
-            li.nav-lk-item.col-4.col-sm.px-12.mt-12.mt-sm-0
-                a(href='#tab-4' data-bs-toggle="tab").nav-lk-link Призы
-            li.nav-lk-item.col-4.col-sm.px-0.mt-12.px-sm-12.mt-sm-0
-                a(href='#tab-5' data-bs-toggle="tab").nav-lk-link Данные
-        .row
-            .tab-content
-                #tab-1.tab-pane.fade.lk-content.active.show
-                    include /modules/lk-tab-1
-                #tab-2.tab-pane.fade.lk-content
-                    include /modules/lk-tab-2
-                #tab-3.tab-pane.fade.lk-content
-                    include /modules/lk-tab-3
-                #tab-4.tab-pane.fade.lk-content
-                    include /modules/lk-tab-4
-                #tab-5.tab-pane.fade.lk-content
-                    include /modules/lk-tab-5
+                        input(type="text" placeholder="Фамилия" required ).form-control
+                     
+                    .col-sm-4.mb-24
+
+                        input(type="text" placeholder="Имя" required ).form-control
+             
+                    .col-sm-4.mb-24
+
+                        input(type="text" placeholder="Отчество" required ).form-control
+
+                    .col-sm-4.mb-24
+
+                        input(type="text" placeholder="Дата рождения" data-toggle="datepicker" required ).form-control
+              
+                    .col-sm-6.mb-xl-25
+
+                        .form-control-wrap.mb-22.radio-wrap
+                            .text-label Пол:
+                            label(for="male").radio-label
+                                input(type="radio" value="Муж" checked name="gender" id="male").radio-input 
+                                | Муж.
+                            label(for="female").radio-label
+                                input(type="radio" value="Жен" name="gender" id="female" ).radio-input
+                                | Жен.
+                    h3.c-white Первая страница паспорта
+                    .col-sm-4.mb-24
+                        input(type="number" placeholder="Серия" required ).form-control
+                  
+                    .col-sm-4.mb-24
+                        input(type="number" placeholder="Номер" required ).form-control
+                 
+                    .col-sm-4.mb-24
+                        input(type="text" placeholder="Дата выдачи" data-toggle="datepicker" required).form-control
+           
+                    .col-sm-12.mb-32
+                        input(type="text" placeholder="Кем выдан" required ).form-control
+                 
+
+                    h3.c-white.mt-30 Адрес прописки
+                    .col-sm-6.mb-24
+                        input(type="text" placeholder="Населенный пункт" required ).form-control
+       
+                    .col-sm-6.mb-24
+                        input(type="text" placeholder="Улица" required ).form-control
+               
+                    .col-sm-3.mb-24
+                        input(type="number" placeholder="Номер дома " required ).form-control
+       
+                    .col-sm-3.mb-24
+                        input(type="number" placeholder="Номер строения" required ).form-control
+             
+                    .col-sm-3.mb-24
+                        input(type="number" placeholder="Номер квартиры" required ).form-control
+          
+                    .col-sm-3.mb-24
+                        input(type="number" placeholder="Почтовый индекс" required ).form-control
+               
+                    h3.c-white.mt-30 Дополнительные документы
+                    .col-sm-6.mb-24
+                        input(type="number" placeholder="ИНН" required).form-control
+              
+                    h3.c-white.mt-30 Загрузить документы (скан или фото)
+
+
+                    .col-md-4.mb-24
+                        .upload-one
+                            .file-subtitle Паспорт, лицевая сторона
+                            <input invalid-custom="file-1" class="file" type="file" data-show-preview="false" required data-msg-placeholder="Загрузить файл">
+
+                        
+                    .col-md-4.mb-24
+                        .upload-one
+                            .file-subtitle Фото паспорта, прописка
+                            <input invalid-custom="file-2" class="file" type="file" data-show-preview="false" required data-msg-placeholder="Загрузить файл">
+
+                          
+
+                    .col-md-4.mb-24
+                        .upload-one
+                            .file-subtitle  ИНН
+                            <input invalid-custom="file-3"  class="file" type="file" data-show-preview="false" required data-msg-placeholder="Загрузить файл">
+           
+                    .col-sm-12.mb-24
+                        button.btn.mx-a(type="submit")  отправить данные
+                    .col-12
+                        .lk-footer Акция проводится на территории Российской Федерации. Период регистрации участников и кодов: с 01.12.2022 по 30.06.2023 включительно по московскому времени. Организатором Акции является ООО «Ай-Экшн». Информация об организаторе Акции, правилах её проведения, товарах-участниках Акции, количестве призов по результатам Акции, сроках, месте и порядке их получения размещена на сайте акции https://novabev.com/ 
+            .col-12.pt-40
+                h3.c-white.text-center.fw-bold Ваши данные отправлены на проверку. <br>Пожалуйста, ожидайте.
+            .col-12.pt-40
+                h3.c-white.text-center.fw-bold Все данные проверены и подтверждены. <br>Скачать сертификат Вы можете по ссылке ниже!
+                a.btn.mx-a(href="")  скачать сертификат
+
+
+
+
+
 
 
 

@@ -24,12 +24,14 @@ html(lang="ru")
         link(type='text/css' href="libs/swiper/swiper-bundle.min.css" rel="stylesheet")
         link(type='text/css' href="libs/fancybox/fancybox.css" rel="stylesheet")
         link(type='text/css' href="css/main.min.css" rel="stylesheet")
-        body
-            include /modules/header
-            block content
-            //- include /modules/footer
-            include /modules/modals
-
+        if page == 'index'    
+            body
+                include /modules/header
+                block content
+        else
+              body.lk-bg
+                include /modules/header
+                block content
         script(src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous")
         script(src='libs/bootstrap/js/bootstrap.bundle.min.js')
         script(src='libs/bootstrap-fileinput/js/fileinput.min.js')
@@ -37,10 +39,10 @@ html(lang="ru")
         script(src='libs/datepicker-bootstrap/js/datepicker.ru-RU.js')
         script(src='libs/bootstrap-fileinput/js/locales/ru.js')
         script(src='libs/DataTables/datatables.min.js')
-        script(src='libs/croppie/croppie.min.js')
+
         script(src='libs/jquery.maskedinput.min.js')
-        script(src='libs/parallax/tweenmax.min.js')
-        script(src='libs/parallax/jquery-parallax.js')
+
+
         script(src='libs/swiper/swiper-bundle.min.js')
-        script(src='libs/fancybox/fancybox.js')
+
         script(src='js/scripts.js')

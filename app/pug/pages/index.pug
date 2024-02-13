@@ -6,10 +6,10 @@ block title
 block variables
     - var page = 'index'
 block content
-    .container-fluid.main-block
-        .container 
+    .container-fluid.main-block.ov-h
+        .container
             .row 
-                .col-6
+                .col-md-6
                     +img('main-text-img.png','','main-text-img')
                 .col-6.d-flex.align-items-center.flex-column
             .row 
@@ -24,3 +24,4 @@ block content
                             button.btn(type="submit")  Войти в кабинет
                     .footer-p
                         |Акция проводится на территории Российской Федерации. Период регистрации участников и кодов: с 01.12.2022 по 30.06.2023 включительно по московскому времени. Организатором Акции является ООО «Ай-Экшн». Информация об организаторе Акции, правилах её проведения, товарах-участниках Акции, количестве призов по результатам Акции, сроках, месте и порядке их получения размещена на сайте акции https://novabev.com/
+        .touch-indent
